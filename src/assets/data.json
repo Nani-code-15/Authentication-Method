@@ -1,0 +1,209 @@
+{
+    "results": [
+        {
+            "file": 43,
+            "id": 41,
+            "logoUrl": "https://s3.ap-southeast-1.amazonaws.com/smartcarservice/1643435807888-Abarth.png",
+            "name": "Naveen",
+            "description": "",
+            "isActive": true
+        },
+        {
+            "file": null,
+            "id": 42,
+            "logoUrl": "https://s3.ap-southeast-1.amazonaws.com/smartcarservice/1643435829881-Acura.png",
+            "name": "Acura",
+            "description": "",
+            "isActive": true
+        },
+        {
+            "file": null,
+            "id": 43,
+            "logoUrl": "https://s3.ap-southeast-1.amazonaws.com/smartcarservice/1643435846793-Alfa_Romeo.png",
+            "name": "Alfa Romeo",
+            "description": "",
+            "isActive": true
+        },
+        {
+            "file": null,
+            "id": 44,
+            "logoUrl": "https://s3.ap-southeast-1.amazonaws.com/smartcarservice/1643435865030-aston-martin.png",
+            "name": "Aston Martin",
+            "description": "",
+            "isActive": true
+        },
+        {
+            "file": null,
+            "id": 45,
+            "logoUrl": "https://s3.ap-southeast-1.amazonaws.com/smartcarservice/1643435894546-Audi.png",
+            "name": "Audi",
+            "description": "",
+            "isActive": true
+        },
+        {
+            "file": null,
+            "id": 46,
+            "logoUrl": "https://s3.ap-southeast-1.amazonaws.com/smartcarservice/1643435908955-baic.png",
+            "name": "BAIC",
+            "description": "",
+            "isActive": true
+        },
+        {
+            "file": null,
+            "id": 47,
+            "logoUrl": "https://s3.ap-southeast-1.amazonaws.com/smartcarservice/1643435924548-bentley.png",
+            "name": "Bentley",
+            "description": "",
+            "isActive": true
+        },
+        {
+            "file": null,
+            "id": 48,
+            "logoUrl": "https://s3.ap-southeast-1.amazonaws.com/smartcarservice/1643435943332-bmw.png",
+            "name": "BMW",
+            "description": "",
+            "isActive": true
+        },
+        {
+            "file": null,
+            "id": 49,
+            "logoUrl": "https://s3.ap-southeast-1.amazonaws.com/smartcarservice/1643435963632-borgward.jpg",
+            "name": "Borgward",
+            "description": "",
+            "isActive": true
+        },
+        {
+            "file": null,
+            "id": 50,
+            "logoUrl": "https://s3.ap-southeast-1.amazonaws.com/smartcarservice/1643435980950-brilliance.png",
+            "name": "Brilliance",
+            "description": "",
+            "isActive": true
+        },
+        {
+            "file": null,
+            "id": 51,
+            "logoUrl": "https://s3.ap-southeast-1.amazonaws.com/smartcarservice/1643435995669-Bugatti.png",
+            "name": "Bugatti",
+            "description": "",
+            "isActive": true
+        },
+        {
+            "file": null,
+            "id": 52,
+            "logoUrl": "https://s3.ap-southeast-1.amazonaws.com/smartcarservice/1643436011479-byd.png",
+            "name": "BYD",
+            "description": "",
+            "isActive": true
+        },
+        {
+            "file": null,
+            "id": 53,
+            "logoUrl": "https://s3.ap-southeast-1.amazonaws.com/smartcarservice/1643436027375-CADILLAC.png",
+            "name": "Cadillac",
+            "description": "",
+            "isActive": true
+        },
+        {
+            "file": null,
+            "id": 54,
+            "logoUrl": "https://s3.ap-southeast-1.amazonaws.com/smartcarservice/1643436068856-Caterham.png",
+            "name": "Caterham",
+            "description": "",
+            "isActive": true
+        },
+        {
+            "file": null,
+            "id": 55,
+            "logoUrl": "https://s3.ap-southeast-1.amazonaws.com/smartcarservice/1643436106212-changan.png",
+            "name": "Changan",
+            "description": "",
+            "isActive": true
+        },
+        {
+            "file": null,
+            "id": 56,
+            "logoUrl": "https://s3.ap-southeast-1.amazonaws.com/smartcarservice/1643436137624-chery.png",
+            "name": "Chery",
+            "description": "",
+            "isActive": true
+        },
+        {
+            "file": null,
+            "id": 57,
+            "logoUrl": "https://s3.ap-southeast-1.amazonaws.com/smartcarservice/1643436149063-CHEVROLET.png",
+            "name": "Chevrolet",
+            "description": "",
+            "isActive": true
+        },
+        {
+            "file": null,
+            "id": 58,
+            "logoUrl": "https://s3.ap-southeast-1.amazonaws.com/smartcarservice/1643436158818-chrysler.jpg",
+            "name": "Chrysler",
+            "description": "",
+            "isActive": true
+        },
+        {
+            "file": null,
+            "id": 59,
+            "logoUrl": "https://s3.ap-southeast-1.amazonaws.com/smartcarservice/1643436170413-citroen.png",
+            "name": "Citroen",
+            "description": "",
+            "isActive": true
+        },
+        {
+            "file": null,
+            "id": 60,
+            "logoUrl": "https://s3.ap-southeast-1.amazonaws.com/smartcarservice/1643436191826-CMC.png",
+            "name": "CMC",
+            "description": "",
+            "isActive": true
+        },
+        {
+            "file": null,
+            "id": 61,
+            "logoUrl": "https://s3.ap-southeast-1.amazonaws.com/smartcarservice/1643436209621-daihatsu.png",
+            "name": "Daihatsu",
+            "description": "",
+            "isActive": true
+        },
+        {
+            "file": null,
+            "id": 62,
+            "logoUrl": "https://s3.ap-southeast-1.amazonaws.com/smartcarservice/1643436223267-Dodge.png",
+            "name": "Dodge",
+            "description": "",
+            "isActive": true
+        },
+        {
+            "file": null,
+            "id": 63,
+            "logoUrl": "https://s3.ap-southeast-1.amazonaws.com/smartcarservice/1643436247802-Dongfeng.png",
+            "name": "Dongfeng",
+            "description": "",
+            "isActive": true
+        },
+        {
+            "file": null,
+            "id": 64,
+            "logoUrl": "https://s3.ap-southeast-1.amazonaws.com/smartcarservice/1643436257644-Dorcen.png",
+            "name": "Dorcen",
+            "description": "",
+            "isActive": true
+        },
+        {
+            "file": null,
+            "id": 65,
+            "logoUrl": "https://s3.ap-southeast-1.amazonaws.com/smartcarservice/1643436266787-faw.png",
+            "name": "FAW",
+            "description": "",
+            "isActive": true
+        }
+    ],
+    "message": "Success",
+    "status": true,
+    "start": 1,
+    "limit": 25,
+    "totalCount": 97
+}

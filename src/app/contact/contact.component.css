@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    font-family: "Lato", sans-serif;
+  }
+  
+
+div.content {
+    color: aliceblue;
+    height: 1000px;
+  }
+  
+  @media screen and (max-width: 700px) {
+    div.content {margin-left: 0;}
+  }
+  

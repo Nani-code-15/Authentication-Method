@@ -1,0 +1,102 @@
+<!-- <div class="container-fluid" style="margin-top: 10%;">
+    <div class="row">
+      <div class="offset-lg-3 col-lg-6">
+     
+  <div class="card-box" style="background-color: #ccc;">
+      <form [formGroup]="Login" (ngSubmit)="ProceedLogin()">
+  
+     
+      <div class="row" style="display: block;">
+        <h2 style="text-align: center;" >Login</h2>
+      </div>
+      
+    <div class="row">
+      <div class="offset-lg-3 col-lg-6">
+          <div class="form-group">
+              <label for="txtname">User Name</label>
+              <input type="text" id="txtname" class="form-control" formControlName="userId" placeholder="Enter the User Name"   autocomplete="off"  />
+          </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="offset-lg-3 col-lg-6">
+          <div class="form-group">
+              <label for="txtpassword">password</label>
+              <input type="text" id="txtpassword" class="form-control" formControlName="password"  placeholder="Enter the password"  autocomplete="off"  />
+          </div>
+      </div>
+    </div>
+    
+    
+    <div class="row">
+      <div class="offset-lg-3 col-lg-2">
+        <br>
+          <div class="form-group" style="text-align: center;">
+             <button type="submit" class="btn btn-primary btn-lg btn-block" >Login</button>
+          </div>
+      </div>
+      <div class="col-lg-3">
+          <br>
+          <span></span>
+      </div>
+    </div>
+  </form>
+    
+    </div>
+  </div>
+  </div>
+  </div>
+ -->
+
+<div class="bg-login">
+    <!--wrapper-->
+    <div class="wrapper pt-4">
+      <div class="section-authentication-signin d-flex align-items-center justify-content-center my-5 my-lg-0">
+        <div class="container-fluid pt-5">
+        <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
+            <div class="col mx-auto p-5">
+          
+              <div class="card">
+                <div class="card-body ">
+                  <div class="border p-4 rounded">
+                    <div class="text-center">
+                      <h3 class="">Login</h3>
+                    </div>
+                  
+                    <div class="form-body">
+                      <form class="row g-3" [formGroup]="Login" (ngSubmit)="ProceedLogin()">
+                        <div class="col-12">
+                          <label for="txtname" class="form-label">User Name</label>
+                          <input type="text" class="form-control" formControlName="userId" id="txtname" placeholder="User Name">
+                        </div>
+                        <div class="col-12">
+                          <label for="txtpassword" class="form-label">Enter Password</label>
+                          <div class="input-group" id="show_hide_password">
+                            <input type="password" class="form-control border-end-0"formControlName="password" id="txtpassword" value="" placeholder="Enter Password"> <a href="#" (click)="$event.preventDefault()" class="input-group-text bg-transparent"></a>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+                            <label class="form-check-label" for="flexSwitchCheckChecked">Remember Me</label>
+                          </div>
+                        </div>
+                       
+                        <div class="col-12">
+                          <div class="d-grid">
+                            <button type="submit" class="btn btn-primary"><i class="bx bxs-lock-open"></i>Login</button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--end row-->
+      </div>
+      </div>
+    </div> 
+    <!--end wrapper-->
+</div> 
