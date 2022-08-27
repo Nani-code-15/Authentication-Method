@@ -9,11 +9,11 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let Products of brandData">
-                    <td>{{Products.id}}</td>
-                    <td>{{Products.logoUrl}}</td>
-                    <td>{{Products.name}}</td>
-                    <td>{{Products.description}}</td>
+                <tr *ngFor="let element of brandData">
+                    <td>{{element.id}}</td>
+                    <td>{{element.logoUrl}}</td>
+                    <td>{{element.name}}</td>
+                    <td>{{element.description}}</td>
                 </tr>
             </tbody>
         </table>

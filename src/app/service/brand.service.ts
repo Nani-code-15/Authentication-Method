@@ -12,9 +12,8 @@ export class BrandService {
   }
 
   constructor(private _http:HttpClient) { }
-  getAllBrand(): Observable<Products[]>{
-    return this._http.get<Products[]>("http://207.180.233.17:10003/api/v1/car-brand");
-    // (`http://207.180.233.17:10003/api/v1/car-brand`);
+  getData(){
+    return this._http.get("http://207.180.233.17:10003/api/v1/car-brand")
   }
   
 }

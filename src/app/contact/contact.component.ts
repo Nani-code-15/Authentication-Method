@@ -30,19 +30,35 @@ export class ContactComponent implements OnInit {
   // }
 
 
-brandData: Products[] = [];
+// brandData: Products[] = [];
+
+
+// getAllBrand() {
+//   this.brandService.getAllBrand().subscribe((result: Products[]) => {
+//     this.brandData = result;
+//   console.log(this.brandData);
+//   });
+
+
+// }
+// }
+
 
 constructor(public brandService: BrandService) { }
 
 ngOnInit(): void {
   this.getAllBrand();
 }
-getAllBrand() {
-  this.brandService.getAllBrand().subscribe((result: Products[]) => {
-    this.brandData = result;
-  console.log(this.brandData);
-  });
-
-
+brandData:any;
+getAllBrand(){
+  this.brandService.getData().subscribe((response:any)=>{
+    this.brandData = response.results;
+    this.brandData.forEach((element: any) => {
+      console.log(element.id)
+      console.log(element.logoUrl)
+      console.log(element.name)
+      console.log(element.description)
+    });
+  })
 }
 }
