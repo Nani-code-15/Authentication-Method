@@ -1,6 +1,7 @@
 export interface Products{
+    results: null;
     id:string;
     name: string;
-    description: string;
     logoUrl: string;
+    description: string;
   } 

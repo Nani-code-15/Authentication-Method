@@ -7,14 +7,21 @@ import { AppComponent } from './app.component';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {ReactiveFormsModule} from '@angular/forms';
 import {CookieService} from 'ngx-cookie-service';
-import { LoginComponent } from './login/login.component'
+import { LoginComponent } from './component/login/login.component';
 import { TokenInterceptorService } from './service/auth/token-interceptor.service';
-import { LayoutComponent } from './layout/layout.component';
-import { AboutComponent } from './about/about.component';
-import { ContactComponent } from './contact/contact.component';
-import { HomeComponent } from './home/home.component';
-import { SideNavComponent } from './side-nav/side-nav.component';
-import { HeadComponent } from './head/head.component';
+import { LayoutComponent } from './component/layout/layout.component';
+import { AboutComponent } from './component/about/about.component';
+import { ContactComponent } from './component/contact/contact.component';
+import { HomeComponent } from './component/home/home.component';
+import { SideNavComponent } from './component/side-nav/side-nav.component';
+import { HeadComponent } from './component/head/head.component';
+import { IndexComponent } from './post/index/index.component';
+import { ViewComponent } from './post/view/view.component';
+import { CreateComponent } from './post/create/create.component';
+import { EditComponent } from './post/edit/edit.component';
+
+
+// import { ViewComponent } from './view/view.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +32,14 @@ import { HeadComponent } from './head/head.component';
     ContactComponent,
     HomeComponent,
     SideNavComponent,
-    HeadComponent
+    HeadComponent,
+    IndexComponent,
+    ViewComponent,
+    CreateComponent,
+    EditComponent,
+  
+   
+    
   ],
   imports: [
     BrowserModule,

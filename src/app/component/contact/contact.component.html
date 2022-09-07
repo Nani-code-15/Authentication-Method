@@ -1,0 +1,29 @@
+ <ng-container *ngIf="brandData">
+    <a href="#" routerLink="/create" class="btn btn-success">Create New Post</a>
+    
+    <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>logoUrl</th> 
+                    <th>description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let element of brandData">
+                    <td>{{element.id}}</td>
+                    <td>{{element.name}}</td>
+                    <td>{{element.logoUrl}}</td>
+                    <td>{{element.description}}</td>
+                    <td>
+                        <button routerLink="edit/{{element.id}}" class="btn btn-primary">Edit</button>
+                        <!-- <a href="#" [routerLink]="['/post/', brandData.id, 'view']" class="btn btn-info">View</a> -->
+                        <!-- <a href="#" routerLink="edit/{{}}" class="btn btn-primary">Edit</a> -->
+                        <!-- <button type="button" (click)="deletePost(brandData.id)" class="btn btn-danger">Delete</button> -->
+                      
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</ng-container>      

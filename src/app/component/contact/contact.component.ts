@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Products } from '../product';
-import { BrandService } from '../service/brand.service';
-
+import { BrandService } from 'src/app/service/brand.service';
+import { Products } from 'src/app/product/products';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -44,21 +43,33 @@ export class ContactComponent implements OnInit {
 // }
 
 
-constructor(public brandService: BrandService) { }
+constructor(public brandService: BrandService) {
+  this.getAll();
+ }
 
 ngOnInit(): void {
-  this.getAllBrand();
 }
-brandData:any;
-getAllBrand(){
-  this.brandService.getData().subscribe((response:any)=>{
-    this.brandData = response.results;
-    this.brandData.forEach((element: any) => {
-      console.log(element.id)
-      console.log(element.logoUrl)
-      console.log(element.name)
-      console.log(element.description)
-    });
+brandData: any;
+getAll(){
+  this.brandService.getAll().subscribe((response:any)=>{
+    this.brandData=response.results;
   })
+  // this.brandService.getAll().subscribe((response:any)=>{
+  //   this.brandData = response.results;
+    // this.brandData.forEach((element: any) => {
+    //   // console.log(element.id)
+    //   // console.log(element.logoUrl)
+    //   // console.log(element.name)
+    //   // console.log(element.description)
+    // });
+  // })
+}
+
+deletePost(id:number){
+  this.brandService.delete(id).subscribe((response:any) => {
+    this.brandData = response.results;
+  //   this.brandData.forEach((element: any) => {
+  // });
+})
 }
 }

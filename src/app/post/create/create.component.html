@@ -1,0 +1,51 @@
+<div class="container">
+    <h1>Create New Post</h1>
+   
+    <a href="#" routerLink="/contact" class="btn btn-primary">Back</a>
+         
+    <form [formGroup]="register" (ngSubmit)="save()">
+   
+        <div class="form-group">
+            <label for="name">name:</label>
+            <input
+                formControlName="name"
+                id="name"
+                type="text"
+                class="form-control">
+            <!-- <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
+                <div *ngIf="f['name'].errors && f['name'].errors['required']">Title is required.</div>
+            </div> -->
+        </div>
+        <div class="form-group">
+            <label for="logoUrl">logoUrl:</label>
+            <input
+                formControlName="logoUrl"
+                id="logoUrl"
+                type="text"
+                class="form-control">
+            <!-- <div *ngIf="f['logoUrl'].touched && f['logoUrl'].invalid" class="alert alert-danger">
+                <div *ngIf="f['logoUrl'].errors && f['logoUrl'].errors['required']">logoUrl is required.</div>
+            </div> -->
+        </div>
+   
+        <div class="form-group">
+            <label for="description">description</label>
+            <textarea
+                formControlName="description"
+                id="description"
+                type="text"
+                class="form-control">
+            </textarea>
+            <!-- <div *ngIf="f['description'].touched && f['description'].invalid" class="alert alert-danger">
+                <div *ngIf="f['description'].errors && f['description'].errors['required']">Body is required.</div>
+            </div> -->
+        </div>
+        <div>
+            <button class="btn btn-primary" type="submit"  >Submit</button>
+        </div>
+    
+        <div>
+            <span class={{messageClass}}>{{message}}</span>
+        </div>
+    </form>
+</div>
