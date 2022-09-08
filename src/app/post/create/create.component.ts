@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BrandService } from 'src/app/service/brand.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { FormGroup, Validators, FormControl} from '@angular/forms';
+
 
       
 @Component({
@@ -11,13 +12,23 @@ import { FormGroup, Validators, FormControl} from '@angular/forms';
 })
 export class CreateComponent implements OnInit {
  
-messageClass=''
+messageclass=''
 message=''
+customerid: any;
+editdata:any;
+  brandData: any;
 
   constructor(
         public brandService: BrandService,
-       
-      ) { }
+        private route: ActivatedRoute
+      ) { 
+        this.customerid=this.route.snapshot.paramMap.get('id');
+        // console.log(this.customerid);
+        if(this.customerid!=null){
+          this.updateBrandData(this.customerid);
+        }
+
+      }
 ngOnInit(): void {
 }
 
@@ -30,17 +41,26 @@ ngOnInit(): void {
 
    save(){
     if(this.register.valid){
-    // console.log(this.register.value);
+    console.log(this.register.value);
     this.brandService.create(this.register.value).subscribe((response:any)=>{
       if(response!=null){
-        this.message="successfully"
-        this.messageClass="sucess"
+        this.brandData=response.results;
+          if (this.brandData.message == 'added') {
+            this.message = "saved successfully."
+            this.messageclass = "sucess"
         this.clearBrandData();
+      } else if (this.brandData.message == 'updated') {
+        this.message = "Customer saved successfully."
+        this.messageclass = "sucess"
+      } else {
+        this.message = "Failed to Save"
+        this.messageclass = "error"
+      }
       }
     });
   }else{
     this.message="please enter valid data"
-    this.messageClass="error"
+    this.messageclass="error"
   }
   }
 
@@ -51,6 +71,25 @@ ngOnInit(): void {
       description:new FormControl(""),
      })
   }
+  updateBrandData(id:any){
+this.brandService.find(id).subscribe((response:any)=>{
+  this.editdata=response;
+  console.log(this.editdata.name);
+    this.register=new FormGroup({
+      id: new FormControl(this.editdata.id),
+      name:new FormControl(this.editdata.name),
+      logoUrl:new FormControl(this.editdata.logoUrl),
+      description:new FormControl(this.editdata.description),
+     });
+    });
+  }
+  get name(){
+    return this.register.get("name");
+  }
+  get logoUrl(){
+    return this.register.get("logoUrl");
+  }
+ 
   
 }
      

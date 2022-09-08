@@ -1,7 +1,71 @@
-<div class="container">
+
+<div class="card-box">
+    <form [formGroup]="register" (ngSubmit)="save()">
+
+   
+    <div class="row">
+      <h2 style="text-align: center;" >Add/Edit</h2>
+    </div>
+    <div class="row">
+      <div class="offset-lg-3 col-lg-6">
+          <div class="form-group">
+              <label for="txtcode">Code</label>
+              <input type="text" id="txtcode" class="form-control" formControlName="id" autocomplete="off" />
+          </div>
+      </div>
+  </div>
+  <div class="row">
+    <div class="offset-lg-3 col-lg-6">
+        <div class="form-group">
+            <label for="txtname">Name</label>
+            <input type="text" id="txtname" class="form-control"  formControlName="name" autocomplete="off"  />
+            <span *ngIf="name && name.invalid && name.touched" class="error link-danger">Please enter data</span>
+        </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="offset-lg-3 col-lg-6">
+        <div class="form-group">
+            <label for="txtlogoUrl">LogoUrl</label>
+            <input type="text" id="txtlogoUrl" class="form-control"  formControlName="logoUrl" autocomplete="off"  />
+            <span  *ngIf="logoUrl && logoUrl.invalid && logoUrl.touched" class="error link-danger">Please enter url</span>
+        </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="offset-lg-3 col-lg-6">
+        <div class="form-group">
+            <label for="txtdescription">description</label>
+            <textarea type="text" id="txtdescription" class="form-control"  formControlName="description" autocomplete="off"></textarea>
+           
+        </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="offset-lg-3 col-lg-2">
+      <br>
+        <div class="form-group">
+           <button type="submit" class="btn btn-primary btn-lg btn-block" >Submit</button>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <br>
+        <span class={{messageclass}}>{{message}}</span>
+    </div>
+    
+   
+  </div>
+</form>
+  
+  </div>
+
+
+
+
+<!-- <div class="container">
     <h1>Create New Post</h1>
    
-    <a href="#" routerLink="/contact" class="btn btn-primary">Back</a>
+    <a href="#" routerLink="/contact" class="btn btn-primary">Back</a><br>
          
     <form [formGroup]="register" (ngSubmit)="save()">
    
@@ -12,9 +76,9 @@
                 id="name"
                 type="text"
                 class="form-control">
-            <!-- <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
+            <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
                 <div *ngIf="f['name'].errors && f['name'].errors['required']">Title is required.</div>
-            </div> -->
+            </div>
         </div>
         <div class="form-group">
             <label for="logoUrl">logoUrl:</label>
@@ -23,9 +87,9 @@
                 id="logoUrl"
                 type="text"
                 class="form-control">
-            <!-- <div *ngIf="f['logoUrl'].touched && f['logoUrl'].invalid" class="alert alert-danger">
+            <div *ngIf="f['logoUrl'].touched && f['logoUrl'].invalid" class="alert alert-danger">
                 <div *ngIf="f['logoUrl'].errors && f['logoUrl'].errors['required']">logoUrl is required.</div>
-            </div> -->
+            </div>
         </div>
    
         <div class="form-group">
@@ -36,16 +100,16 @@
                 type="text"
                 class="form-control">
             </textarea>
-            <!-- <div *ngIf="f['description'].touched && f['description'].invalid" class="alert alert-danger">
+            <div *ngIf="f['description'].touched && f['description'].invalid" class="alert alert-danger">
                 <div *ngIf="f['description'].errors && f['description'].errors['required']">Body is required.</div>
-            </div> -->
+            </div>
         </div>
         <div>
-            <button class="btn btn-primary" type="submit"  >Submit</button>
+            <button class="btn btn-primary" type="submit">Submit</button>
         </div>
     
         <div>
-            <span class={{messageClass}}>{{message}}</span>
+            <span class={{messageclass}}>{{message}}</span>
         </div>
     </form>
-</div>
+</div> -->

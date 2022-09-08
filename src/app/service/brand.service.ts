@@ -12,7 +12,8 @@ export class BrandService {
     
   public userData = [];
   public baseServiceUrl = '/car-brand'
- 
+
+
 // httpOptions = {
 //   headers: new HttpHeaders({
 //     'Content-Type': 'application/json'
@@ -22,16 +23,16 @@ export class BrandService {
 
 constructor(private httpClient: HttpClient) { }
   
-getAll(): Observable<Products[]> {
-  return this.httpClient.get<any[]>(`${environment.apiUrl}/car-brand`);
+getAll() {
+  return this.httpClient.get<any[]>(`${environment.apiUrl+this.baseServiceUrl}/`);
 }
   
 create(carbrandData: any): Observable<Products> {
-  return this.httpClient.post<Products>(environment.apiUrl +'/car-brand', carbrandData);
+  return this.httpClient.post<Products>(`${environment.apiUrl+this.baseServiceUrl}/`, carbrandData);
 }  
   
 find(id: any): Observable<Products> {
-  return this.httpClient.get<Products>(`${environment.apiUrl+ `/car-brand`+id}`);
+  return this.httpClient.get<Products>(`${environment.apiUrl+this.baseServiceUrl}/`+id);
  
 }
   
@@ -41,7 +42,7 @@ find(id: any): Observable<Products> {
 // }
   
 delete(id: any): Observable<Products> {
-  return this.httpClient.delete<Products>(`${environment.apiUrl+ `/car-brand`+id}`);
+  return this.httpClient.delete<Products>(`${environment.apiUrl+this.baseServiceUrl}/`+id );
  
 }
    

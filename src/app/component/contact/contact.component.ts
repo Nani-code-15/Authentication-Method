@@ -8,6 +8,31 @@ import { Products } from 'src/app/product/products';
 })
 export class ContactComponent implements OnInit {
 
+  constructor(public brandService: BrandService) {
+    this.getAll();
+   }
+  
+  ngOnInit(): void {
+  }
+  brandData: any;
+  getAll(){
+    this.brandService.getAll().subscribe((response:any)=>{
+      this.brandData=response.results;
+    })
+
+  }
+
+  delete(id:any){
+    if(confirm("Do you want to remove?")){
+    this.brandService.delete(id).subscribe((response:any) => {
+      this.getAll();
+    });
+  }
+  }
+  }
+
+
+
   // brandData: Products[] = [];
 
   // constructor(public brandService: BrandService) { }
@@ -43,17 +68,7 @@ export class ContactComponent implements OnInit {
 // }
 
 
-constructor(public brandService: BrandService) {
-  this.getAll();
- }
 
-ngOnInit(): void {
-}
-brandData: any;
-getAll(){
-  this.brandService.getAll().subscribe((response:any)=>{
-    this.brandData=response.results;
-  })
   // this.brandService.getAll().subscribe((response:any)=>{
   //   this.brandData = response.results;
     // this.brandData.forEach((element: any) => {
@@ -63,13 +78,3 @@ getAll(){
     //   // console.log(element.description)
     // });
   // })
-}
-
-deletePost(id:number){
-  this.brandService.delete(id).subscribe((response:any) => {
-    this.brandData = response.results;
-  //   this.brandData.forEach((element: any) => {
-  // });
-})
-}
-}

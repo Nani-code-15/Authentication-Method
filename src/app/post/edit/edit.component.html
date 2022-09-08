@@ -1,9 +1,10 @@
+
 <div class="container">
     <h1>Update Post</h1>
     
     <a href="#" routerLink="/contact" class="btn btn-primary">Back</a>
            
-    <form [formGroup]="form">
+    <form [formGroup]="register" (ngSubmit)="save()">
      
         <div class="form-group">
             <label for="name">Name</label>
@@ -11,11 +12,11 @@
                 formControlName="name"
                 id="name"
                 type="text"
-                [(ngModel)]="products.name"
+                [(ngModel)]="editdata.name"
                 class="form-control">
-            <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
+            <!-- <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
                 <div *ngIf="f['name'].errors && f['name'].errors['required']">Title is required.</div>
-            </div>
+            </div> -->
         </div>
             
         <div class="form-group">
@@ -24,12 +25,12 @@
                 formControlName="logoUrl"
                 id="logoUrl"
                 type="text"
-                [(ngModel)]="products.logoUrl"
+                [(ngModel)]="editdata.logoUrl"
                 class="form-control">
         
-            <div *ngIf="f['logoUrl'].touched && f['logoUrl'].invalid" class="alert alert-danger">
+            <!-- <div *ngIf="f['logoUrl'].touched && f['logoUrl'].invalid" class="alert alert-danger">
                 <div *ngIf="f['logoUrl'].errors && f['logoUrl'].errors['required']">Title is required.</div>
-            </div>
+            </div> -->
         </div>
 
         <div class="form-group">
@@ -38,14 +39,14 @@
                     formControlName="description"
                     id="description"
                     type="text"
-                    [(ngModel)]="products.description"
+                    [(ngModel)]="editdata.description"
                     class="form-control">
                 </textarea>
-                <div *ngIf="f['description'].touched && f['description'].invalid" class="alert alert-danger">
+                <!-- <div *ngIf="f['description'].touched && f['description'].invalid" class="alert alert-danger">
                     <div *ngIf="f['description'].errors && f['description'].errors['required']">Body is required.</div>
-                </div>
+                </div> -->
         </div>
           
-        <button class="btn btn-primary" type="submit" (click)="submit()">Update</button>
+        <button class="btn btn-primary" type="submit">Update</button>
     </form>
 </div>

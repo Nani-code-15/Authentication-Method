@@ -1,5 +1,5 @@
 export interface Products{
-    results: null;
+    results: Products;
     id:string;
     name: string;
     logoUrl: string;

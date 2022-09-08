@@ -25,32 +25,32 @@ const routes: Routes = [
 //   {path:"login",component:LoginComponent}
 
 {
-  path: '',component: HeadComponent, canActivate:[AuthGuard],children:[
+  path: "",component: HeadComponent, canActivate:[AuthGuard],children:[
     {
-      path: '',component:HomeComponent
+      path: "",component:HomeComponent
     },
     {
-      path: 'home',component:HomeComponent
+      path: "home",component:HomeComponent
     },
     {
-      path: 'about',component:AboutComponent
+      path: "about",component:AboutComponent
     },
     {
-      path: 'contact',component:ContactComponent
+      path: "contact",component:ContactComponent
     },
     { 
-      path: 'view', component: ViewComponent
+      path: "view/:id", component: ViewComponent
      },
     {
-       path: 'post/create', component: CreateComponent
+      path: "post/create", component: CreateComponent
     },
     { 
-      path: 'edit/:id', component: EditComponent 
+      path: "Edit/:id", component: CreateComponent 
     }
   ],
 },
 {
-  path: 'login',component:LoginComponent
+  path: "login",component:LoginComponent
 }
 ];
 

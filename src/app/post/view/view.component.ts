@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BrandService } from 'src/app/service/brand.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Products } from 'src/app/product/products';
-     
+import { FormGroup, FormControl, Validators, FormBuilder} from '@angular/forms';
 @Component({
   selector: 'app-view',
   templateUrl: './view.component.html',
@@ -10,48 +10,64 @@ import { Products } from 'src/app/product/products';
 })
 export class ViewComponent implements OnInit {
       
-  id!: number;
-  products!: Products;
-     
-  /*------------------------------------------
-  --------------------------------------------
-  Created constructor
-  --------------------------------------------
-  --------------------------------------------*/
-  constructor(
-    public brandService: BrandService,
-    private route: ActivatedRoute,
-    private router: Router
-   ) { }
-     
-  /**
-   * Write code on Method
-   *
-   * @return response()
-   */
-  ngOnInit(): void {
-    this.id = this.route.snapshot.params['productsId'];
-         
-    this.brandService.find(this.id).subscribe((data: Products)=>{
-      this.products = data;
-    });
-  }
-     
-}
-// constructor(public brandService: BrandService) { }
+  essageClass=''
+message=''
+customerid: any;
+editdata:any;
 
-// ngOnInit(): void {
-//   this.getBrandId();
-// }
-// brandData: any;
-// getBrandId(){
-//   this.brandService.find().subscribe((response:any)=>{
-//     this.brandData = response.results;
-//     this.brandData.forEach((element: any) => {
-//       console.log(element.id)
-//       console.log(element.logoUrl)
-//       console.log(element.name)
-//       console.log(element.description)
-//     });
-//   })
-// }
+  constructor(
+        public brandService: BrandService,
+        private route: ActivatedRoute
+      ) { 
+        this.customerid=this.route.snapshot.paramMap.get('id');
+        // console.log(this.customerid);
+        if(this.customerid!=null){
+          this.updateBrandData(this.customerid);
+        }
+
+      }
+ngOnInit(): void {
+}
+
+   register=new FormGroup({
+    id:new FormControl({value:'',disabled:true}),
+    name:new FormControl("", Validators.required),
+    logoUrl:new FormControl("", Validators.required),
+    description:new FormControl("", Validators.required),
+   })
+
+   save(){
+    if(this.register.valid){
+    // console.log(this.register.value);
+    this.brandService.create(this.register.value).subscribe((response:any)=>{
+      if(response!=null){
+        this.message="successfully"
+        this.essageClass="sucess"
+        this.clearBrandData();
+      }
+    });
+  }else{
+    this.message="please enter valid data"
+    this.essageClass="error"
+  }
+  }
+
+  clearBrandData(){
+    this.register=new FormGroup({
+      name:new FormControl(""),
+      logoUrl:new FormControl(""),
+      description:new FormControl(""),
+     })
+  }
+  updateBrandData(id:any){
+this.brandService.find(id).subscribe((response:any)=>{
+  this.editdata=response;
+});
+    this.register=new FormGroup({
+      name:new FormControl(this.editdata.name),
+      logoUrl:new FormControl(this.editdata.logoUrl),
+      description:new FormControl(this.editdata.description),
+     })
+  }
+  
+}
