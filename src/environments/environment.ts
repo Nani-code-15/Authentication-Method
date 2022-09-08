@@ -7,8 +7,8 @@ export const environment = {
   baseURL: 'http://localhost:10010',
   //apiUrl: 'http://0d60-103-88-77-218.ngrok.io/api/v1',
   //apiUrl: 'http://localhost:10010/api/v1',
-  apiUrl: 'http://192.168.18.149:10003/api/v1',
-  //apiUrl: 'http://207.180.233.17:10003/api/v1',
+  //apiUrl: 'http://192.168.18.149:10003/api/v1',
+  apiUrl: 'http://207.180.233.17:10003/api/v1',
   webhookUrl: 'http://localhost:10010/webhook'
 }; 
 
