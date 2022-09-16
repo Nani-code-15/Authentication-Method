@@ -1,7 +1,6 @@
-export interface Products{
-    results: Products;
-    id:string;
-    name: string;
-    logoUrl: string;
-    description: string;
-  } 
+export interface Products {
+  id: number;
+  name: string;
+  contactNumber: string;
+  description: string;
+} 

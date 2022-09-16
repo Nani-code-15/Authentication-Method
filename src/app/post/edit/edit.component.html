@@ -1,52 +1,65 @@
+<div class="card-box">
+    <form [formGroup]="register">
 
-<div class="container">
-    <h1>Update Post</h1>
-    
-    <a href="#" routerLink="/contact" class="btn btn-primary">Back</a>
-           
-    <form [formGroup]="register" (ngSubmit)="save()">
-     
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input
-                formControlName="name"
-                id="name"
-                type="text"
-                [(ngModel)]="editdata.name"
-                class="form-control">
-            <!-- <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
-                <div *ngIf="f['name'].errors && f['name'].errors['required']">Title is required.</div>
-            </div> -->
-        </div>
-            
-        <div class="form-group">
-            <label for="logoUrl">LogoUrl</label>
-            <input
-                formControlName="logoUrl"
-                id="logoUrl"
-                type="text"
-                [(ngModel)]="editdata.logoUrl"
-                class="form-control">
-        
-            <!-- <div *ngIf="f['logoUrl'].touched && f['logoUrl'].invalid" class="alert alert-danger">
-                <div *ngIf="f['logoUrl'].errors && f['logoUrl'].errors['required']">Title is required.</div>
-            </div> -->
-        </div>
 
-        <div class="form-group">
-                <label for="description">Description</label>
-                <textarea
-                    formControlName="description"
-                    id="description"
-                    type="text"
-                    [(ngModel)]="editdata.description"
-                    class="form-control">
-                </textarea>
-                <!-- <div *ngIf="f['description'].touched && f['description'].invalid" class="alert alert-danger">
-                    <div *ngIf="f['description'].errors && f['description'].errors['required']">Body is required.</div>
-                </div> -->
+        <div class="row">
+            <h2 style="text-align: center;">Edit</h2>
         </div>
-          
-        <button class="btn btn-primary" type="submit">Update</button>
+         <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label for="txtcode">Code</label>
+                    <input type="text" id="txtcode" class="form-control"  formControlName="id" autocomplete="off" />
+                </div>
+            </div>
+        </div> 
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label for="txtname">Name</label>
+                    <input type="text" id="txtname" class="form-control" name="name"  formControlName="name"
+                        autocomplete="off" />
+                    <span *ngIf="name && name.invalid && name.touched" class="error link-danger">Please enter
+                        data</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label for="txtcontactNumber">ContactNumber</label>
+                    <input type="text" id="txtcontactNumber" name="logoUrl"  class="form-control" 
+                        formControlName="contactNumber" autocomplete="off" />
+                    <span *ngIf="contactNumber && contactNumber.invalid && contactNumber.touched" class="error link-danger">Please enter
+                        url</span>
+                </div>
+            </div>
+        </div>
+        <div class="row"> 
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label for="txtdescription">Description</label>
+                    <textarea type="text" id="txtdescription" name="description"  class="form-control" 
+                        formControlName="description" autocomplete="off"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-lg-3 col-lg-2">
+                <br>
+                <div class="form-group">
+                    <button type="submit" (click)="save()" class="btn btn-primary btn-lg btn-block submitform">Submit</button>
+
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <br>
+                <span id="msg" class={{messageclass}}>{{message}}</span>
+                <button routerLink="/contact" class="btn btn-primary btn-lg btn-block float-end">Back</button>
+            </div>
+
+
+        </div>
     </form>
+
 </div>

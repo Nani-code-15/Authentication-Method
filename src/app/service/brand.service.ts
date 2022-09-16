@@ -1,19 +1,50 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, Observable, pipe } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Products } from '../product/products';
-import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BrandService {
+
     
   public userData = [];
-  public baseServiceUrl = '/car-brand'
+  public baseServiceUrl = '/learning'
+
+constructor(private httpClient: HttpClient) { }
+  
+getAll(): Observable<Products[]> {
+  return this.httpClient.get<Products[]>(`${environment.apiUrl+this.baseServiceUrl}`);
+}
+   
+getId(id: any): Observable<Products[]> {
+  return this.httpClient.get<Products[]>(`${environment.apiUrl+this.baseServiceUrl}/${id}`);
+ 
+}
+submitform(e:any){
+  if(e['id']){
+    return this.httpClient.put<Products[]>(`${environment.apiUrl+this.baseServiceUrl}`, e);
+  }
+  else{
+    e['id'] = 0
+    return this.httpClient.post<Products[]>(`${environment.apiUrl+this.baseServiceUrl}`, e);
+  }
+}
 
 
+
+delete(id: any): Observable<Products[]> {
+  return this.httpClient.delete<Products[]>(`${environment.apiUrl+this.baseServiceUrl}/${id}` );
+ 
+}
+   
+}
+
+// create(Data:Products): Observable<Products> {
+//   return this.httpClient.post<Products>(`${environment.apiUrl+this.baseServiceUrl}`,Data);
+// }  
 // httpOptions = {
 //   headers: new HttpHeaders({
 //     'Content-Type': 'application/json'
@@ -21,34 +52,13 @@ export class BrandService {
 // }
 
 
-constructor(private httpClient: HttpClient) { }
-  
-getAll() {
-  return this.httpClient.get<any[]>(`${environment.apiUrl+this.baseServiceUrl}/`);
-}
-  
-create(carbrandData: any): Observable<Products> {
-  return this.httpClient.post<Products>(`${environment.apiUrl+this.baseServiceUrl}/`, carbrandData);
-}  
-  
-find(id: any): Observable<Products> {
-  return this.httpClient.get<Products>(`${environment.apiUrl+this.baseServiceUrl}/`+id);
- 
-}
-  
 // update(id: any): Observable<Products> {
 //   return this.httpClient.put<Products>(`${environment.apiUrl+ `/car-brand`+id}`);
  
 // }
-  
-delete(id: any): Observable<Products> {
-  return this.httpClient.delete<Products>(`${environment.apiUrl+this.baseServiceUrl}/`+id );
- 
-}
-   
-}
-
-
+// create(Data: any): Observable<Products> {
+//   return this.httpClient.post<Products>(`${environment.apiUrl+this.baseServiceUrl}`,Data);
+// }  
 
 // serviceURL: string = "URL(assets/data.json,)"
 //   constructor(private http: HttpClient) {}

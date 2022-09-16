@@ -1,115 +1,100 @@
-
 <div class="card-box">
-    <form [formGroup]="register" (ngSubmit)="save()">
-
-   
-    <div class="row">
-      <h2 style="text-align: center;" >Add/Edit</h2>
-    </div>
-    <div class="row">
-      <div class="offset-lg-3 col-lg-6">
-          <div class="form-group">
-              <label for="txtcode">Code</label>
-              <input type="text" id="txtcode" class="form-control" formControlName="id" autocomplete="off" />
-          </div>
-      </div>
-  </div>
-  <div class="row">
-    <div class="offset-lg-3 col-lg-6">
-        <div class="form-group">
-            <label for="txtname">Name</label>
-            <input type="text" id="txtname" class="form-control"  formControlName="name" autocomplete="off"  />
-            <span *ngIf="name && name.invalid && name.touched" class="error link-danger">Please enter data</span>
+    <form [formGroup]="register">
+        <div class="row">
+            <h2 style="text-align: center;">Add</h2>
         </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="offset-lg-3 col-lg-6">
-        <div class="form-group">
-            <label for="txtlogoUrl">LogoUrl</label>
-            <input type="text" id="txtlogoUrl" class="form-control"  formControlName="logoUrl" autocomplete="off"  />
-            <span  *ngIf="logoUrl && logoUrl.invalid && logoUrl.touched" class="error link-danger">Please enter url</span>
-        </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="offset-lg-3 col-lg-6">
-        <div class="form-group">
-            <label for="txtdescription">description</label>
-            <textarea type="text" id="txtdescription" class="form-control"  formControlName="description" autocomplete="off"></textarea>
-           
-        </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="offset-lg-3 col-lg-2">
-      <br>
-        <div class="form-group">
-           <button type="submit" class="btn btn-primary btn-lg btn-block" >Submit</button>
-        </div>
-    </div>
-    <div class="col-lg-3">
-        <br>
-        <span class={{messageclass}}>{{message}}</span>
-    </div>
-    
-   
-  </div>
-</form>
-  
-  </div>
-
-
-
-
-<!-- <div class="container">
-    <h1>Create New Post</h1>
-   
-    <a href="#" routerLink="/contact" class="btn btn-primary">Back</a><br>
-         
-    <form [formGroup]="register" (ngSubmit)="save()">
-   
-        <div class="form-group">
-            <label for="name">name:</label>
-            <input
-                formControlName="name"
-                id="name"
-                type="text"
-                class="form-control">
-            <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
-                <div *ngIf="f['name'].errors && f['name'].errors['required']">Title is required.</div>
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label for="txtcode">Code</label>
+                    <input type="text" id="txtcode" class="form-control" formControlName="id" autocomplete="off" />
+                </div>
             </div>
         </div>
-        <div class="form-group">
-            <label for="logoUrl">logoUrl:</label>
-            <input
-                formControlName="logoUrl"
-                id="logoUrl"
-                type="text"
-                class="form-control">
-            <div *ngIf="f['logoUrl'].touched && f['logoUrl'].invalid" class="alert alert-danger">
-                <div *ngIf="f['logoUrl'].errors && f['logoUrl'].errors['required']">logoUrl is required.</div>
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label for="txtname">Name</label>
+                    <input type="text" id="txtname" class="form-control" name="name" formControlName="name"
+                        autocomplete="off" />
+                    <span *ngIf="name && name.invalid && name.touched" class="error link-danger">Please enter
+                        data</span>
+                </div>
             </div>
         </div>
-   
-        <div class="form-group">
-            <label for="description">description</label>
-            <textarea
-                formControlName="description"
-                id="description"
-                type="text"
-                class="form-control">
-            </textarea>
-            <div *ngIf="f['description'].touched && f['description'].invalid" class="alert alert-danger">
-                <div *ngIf="f['description'].errors && f['description'].errors['required']">Body is required.</div>
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label for="txtcontactNumber">ContactNumber</label>
+                    <input type="text" id="txtcontactNumber" name="logoUrl" class="form-control"
+                        formControlName="contactNumber" autocomplete="off" />
+                    <span *ngIf="contactNumber && contactNumber.invalid && contactNumber.touched"
+                        class="error link-danger">Please enter
+                        url</span>
+                </div>
             </div>
         </div>
-        <div>
-            <button class="btn btn-primary" type="submit">Submit</button>
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label for="txtdescription">Description</label>
+                    <textarea type="text" id="txtdescription" name="description" class="form-control"
+                        formControlName="description" autocomplete="off"></textarea>
+                </div>
+            </div>
         </div>
-    
-        <div>
-            <span class={{messageclass}}>{{message}}</span>
+        <div class="row">
+            <div class="offset-lg-3 col-lg-2">
+                <br>
+                <div class="form-group">
+                    <button type="submit" (click)="save()"
+                        class="btn btn-primary btn-lg btn-block submitform">Submit</button>
+
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <br>
+                <span id="msg" class={{messageclass}}>{{message}}</span>
+                <button routerLink="/contact" class="btn btn-primary btn-lg btn-block float-end">Back</button>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+<!-- <div class="card-box">
+    <form [formGroup]="guestForm">
+        <div class="row">   
+            <div class="form-group  offset-lg-3 col-lg-6">  
+                <label for="txtname">Name</label>
+                <input type="text" [(ngModel)]="dataForm.name" formControlName="name" class="form-control" id="exampleFormControlInput1">
+            </div>
+        </div>
+        <div class="row">   
+            <div class="offset-lg-3 col-lg-6">  
+                <label for="txtlogoUrl">LogoUrl</label>
+                <input type="text" [(ngModel)]="dataForm.logoUrl" formControlName="logoUrl"  class="form-control" id="exampleFormControlInput1">
+            </div>
+        </div>
+        <div class="row">   
+            <div class="offset-lg-3 col-lg-6">  
+                <label for="txtdescription">Description</label>
+                <input type="text" [(ngModel)]="dataForm.description" formControlName="description"  class="form-control" id="exampleFormControlInput1">
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-lg-3 col-lg-2">
+                <br>
+                <div class="form-group">
+                    <button type="submit"  (click)="save()" class="btn btn-primary btn-lg btn-block submitform">Submit</button>
+
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <br>
+                <span id="msg" class={{messageclass}}>{{message}}</span>
+                <button routerLink="/contact" class="btn btn-primary btn-lg btn-block float-end">Back</button>
+            </div>
         </div>
     </form>
 </div> -->

@@ -38,3 +38,9 @@ app-side-nav{
 .container-fluid{
     padding: 0;
 }
+@media only screen and (max-width: 768px) {
+    app-side-nav{
+       height: 100%;
+    }
+
+}

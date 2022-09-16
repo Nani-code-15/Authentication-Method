@@ -1,23 +1,34 @@
- <ng-container *ngIf="brandData">
-    <a href="#" routerLink="/post/create" class="btn btn-success">Create New Post</a>
-    
-    <table class="table table-bordered">
+<div class="content p-3">
+<ng-container *ngIf="brandData">
+
+    <div class="tb1">
+        <div id="rt" class="p-3 d-flex justify-content-end">
+            <a id="bt1" href="#" routerLink="/post/create" class="btn btn-info start-end">Create New</a>
+        </div>
+
+        <table class="table table-hover">
+
             <thead>
-                <tr>
+
+                <tr>    
+                    <th>#</th>
                     <th>id</th>
                     <th>name</th>
-                    <th>logoUrl</th> 
+                    <th>logoUrl</th>
                     <th>description</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let element of brandData">
+                <tr *ngFor="let element of brandData; index as i ">
+                    <td>{{i + 1}}</td>
                     <td>{{element.id}}</td>
                     <td>{{element.name}}</td>
-                    <td>{{element.logoUrl}}</td>
+                    <td>{{element.contactNumber}}</td>
                     <td>{{element.description}}</td>
                     <td>
-                        <button routerLink="/Edit/{{element.id}}" class="btn btn-primary">Edit</button> |  <button (click)="delete(element.id)" class="btn btn-danger">Delete</button>
+                        <button routerLink="/Edit/{{element.id}}" class="btn btn-primary">Edit</button> | <button
+                            (click)="delete(element.id)" class="btn btn-danger">Delete</button>
                         <!-- <a href="#" [routerLink]="['/post/', brandData.id, 'view']" class="btn btn-info">View</a> -->
                         <!-- <a href="#" routerLink="edit/{{}}" class="btn btn-primary">Edit</a> -->
                         <!-- <button type="button" (click)="deletePost(brandData.id)" class="btn btn-danger">Delete</button> -->
@@ -25,5 +36,9 @@
                     </td>
                 </tr>
             </tbody>
+
         </table>
-</ng-container>      
+    </div>
+   
+</ng-container>
+</div>

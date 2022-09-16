@@ -8,13 +8,14 @@ import { Products } from 'src/app/product/products';
 })
 export class ContactComponent implements OnInit {
 
+  
   constructor(public brandService: BrandService) {
     this.getAll();
    }
   
   ngOnInit(): void {
   }
-  brandData: any;
+  brandData: Products[]=[];
   getAll(){
     this.brandService.getAll().subscribe((response:any)=>{
       this.brandData=response.results;
@@ -29,6 +30,13 @@ export class ContactComponent implements OnInit {
     });
   }
   }
+  Edit(id: any) {
+    if(confirm("Do you want to edit?")){
+      this.brandService.getId(id).subscribe((response:any) => {
+        this.getAll();
+      });
+    }
+    }
   }
 
 

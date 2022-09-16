@@ -15,12 +15,9 @@ import { ContactComponent } from './component/contact/contact.component';
 import { HomeComponent } from './component/home/home.component';
 import { SideNavComponent } from './component/side-nav/side-nav.component';
 import { HeadComponent } from './component/head/head.component';
-import { IndexComponent } from './post/index/index.component';
-import { ViewComponent } from './post/view/view.component';
 import { CreateComponent } from './post/create/create.component';
 import { EditComponent } from './post/edit/edit.component';
-
-
+ 
 // import { ViewComponent } from './view/view.component';
 
 @NgModule({
@@ -33,17 +30,16 @@ import { EditComponent } from './post/edit/edit.component';
     HomeComponent,
     SideNavComponent,
     HeadComponent,
-    IndexComponent,
-    ViewComponent,
     CreateComponent,
     EditComponent,
-  
-   
-    
+      
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,HttpClientModule,ReactiveFormsModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
+  
   ],
    providers: [CookieService,{provide:HTTP_INTERCEPTORS,useClass:TokenInterceptorService,multi:true}],
   bootstrap: [AppComponent]

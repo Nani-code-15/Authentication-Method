@@ -12,4 +12,15 @@ div.content {
   @media screen and (max-width: 700px) {
     div.content {margin-left: 0;}
   }
-  
+.tb1{
+  border: 1px solid #c8ced3;
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+#rt{
+  border-bottom: 1px solid #c8ced3;
+  background-color: #f0f3f5;
+}
+.content{
+  background-color: #e4e5e6;
+}

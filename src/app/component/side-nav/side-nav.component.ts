@@ -8,27 +8,27 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./side-nav.component.css']
 })
 export class SideNavComponent implements OnInit {
-@Input() sideNavStatus: boolean = false;
-  list =[
+  @Input() sideNavStatus: boolean = false;
+  list = [
     {
-      number:'1',
+      number: '1',
       name: 'Home',
       icon: 'fa-solid fa-house',
       routerLink: 'home'
     },
     {
-      number:'2',
+      number: '2',
       name: 'Contact',
       icon: 'fa-solid fa-phone',
       routerLink: 'contact'
     },
     {
-      number:'3',
+      number: '3',
       name: 'About',
       icon: 'fa-solid fa-circle-info',
       routerLink: 'about'
     },
-   
+
   ]
   constructor() { }
 
