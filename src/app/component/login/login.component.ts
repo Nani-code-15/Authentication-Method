@@ -16,8 +16,8 @@ export class LoginComponent implements OnInit {
   Customerid: any;
   editdata: any;
   responsedata: any;
-  
-  constructor(private service: AuthService,private route:Router) {
+
+  constructor(private service: AuthService, private route: Router) {
     localStorage.clear();
   }
   Login = new FormGroup({
@@ -30,16 +30,16 @@ export class LoginComponent implements OnInit {
   ProceedLogin() {
     if (this.Login.valid) {
       this.service.ProceedLogin(this.Login.value).subscribe(result => {
-        if(result!=null){
-          this.responsedata=result;
+        if (result != null) {
+          this.responsedata = result;
           const token = this.responsedata['accessToken'];
-          localStorage.setItem('token',token)
+          localStorage.setItem('token', token)
           const helper = new JwtHelperService();
           const decodedToken = helper.decodeToken(token);
           const expirationDate = helper.getTokenExpirationDate(token);
           const isExpired = helper.isTokenExpired(token);
           console.log(decodedToken);
-          
+
           this.route.navigate([''])
         }
 

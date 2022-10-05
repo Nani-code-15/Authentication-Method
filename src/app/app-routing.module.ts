@@ -7,9 +7,11 @@ import { HomeComponent } from './component/home/home.component';
 import { LoginComponent } from './component/login/login.component';
 import { CreateComponent } from './post/create/create.component';
 import { EditComponent } from './post/edit/edit.component';
-
+import { PopupComponent } from './component/popup/popup.component';
 import { AuthGuard } from './shared/auth.guard';
 import { RoleGuard } from './shared/role.guard';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
+
 
 const routes: Routes = [
 //   { path: "", component: HomeComponent,canActivate:[AuthGuard] },
@@ -23,11 +25,16 @@ const routes: Routes = [
 //     ],canActivate:[RoleGuard]
 //   },
 //   {path:"login",component:LoginComponent}
-
+//  {
+//       path: "home",component:HomeComponent
+//     },  
 {
   path: "",component: HeadComponent, canActivate:[AuthGuard],children:[
     {
-      path: "",component:HomeComponent
+      path: "",component:DashboardComponent
+    },
+    {
+      path: "dashboard",component:DashboardComponent
     },
     {
       path: "home",component:HomeComponent
@@ -38,12 +45,13 @@ const routes: Routes = [
     {
       path: "contact",component:ContactComponent
     },
+
    
     {
-      path: "post/create", component: CreateComponent
+      path: "create", component: CreateComponent
     },
     { 
-      path: "Edit/:id", component: EditComponent 
+      path: "Edit/:id", component: CreateComponent 
     }
   ],
 },

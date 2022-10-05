@@ -5,8 +5,7 @@ body {
   
 
 div.content {
-    color: aliceblue;
-    height: 1000px;
+    color: aliceblue; 
   }
   
   @media screen and (max-width: 700px) {
@@ -20,7 +19,13 @@ div.content {
 #rt{
   border-bottom: 1px solid #c8ced3;
   background-color: #f0f3f5;
+  border-radius: 8px 8px 0px 0px;
 }
-.content{
+/* .content{
   background-color: #e4e5e6;
+} */
+.table th ,td{
+   border: 1px solid rgb(212, 210, 210);
+   padding: 8px;
+   
 }

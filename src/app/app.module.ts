@@ -17,7 +17,11 @@ import { SideNavComponent } from './component/side-nav/side-nav.component';
 import { HeadComponent } from './component/head/head.component';
 import { CreateComponent } from './post/create/create.component';
 import { EditComponent } from './post/edit/edit.component';
- 
+import { PopupComponent } from './component/popup/popup.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
+
+
 // import { ViewComponent } from './view/view.component';
 
 @NgModule({
@@ -32,14 +36,18 @@ import { EditComponent } from './post/edit/edit.component';
     HeadComponent,
     CreateComponent,
     EditComponent,
-      
+    PopupComponent,
+    DashboardComponent,
+   
+ 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
-  
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+ 
   ],
    providers: [CookieService,{provide:HTTP_INTERCEPTORS,useClass:TokenInterceptorService,multi:true}],
   bootstrap: [AppComponent]

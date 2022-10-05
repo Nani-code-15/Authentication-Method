@@ -1,1 +1,83 @@
-<h1>home works!</h1>
+<main>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary p-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Launch demo modal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-modal="true">
+
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Detail</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="card-box">
+                        <form [formGroup]="register">
+                            <div class="row">
+                                <div class="">
+                                    <div class="form-group">
+                                        <label for="txtcode">Code</label>
+                                        <input type="text" id="txtcode" class="form-control" formControlName="id"
+                                            autocomplete="off" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="">
+                                    <div class="form-group">
+                                        <label for="txtname">Name</label>
+                                        <input type="text" id="txtname" class="form-control" name="name"
+                                            formControlName="name" autocomplete="off" />
+                                        <span *ngIf="name && name.invalid && name.touched"
+                                            class="error link-danger">Please enter
+                                            data</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="">
+                                    <div class="form-group">
+                                        <label for="txtcontactNumber">ContactNumber</label>
+                                        <input type="text" id="txtcontactNumber" name="logoUrl" class="form-control"
+                                            formControlName="contactNumber" autocomplete="off" />
+                                        <span *ngIf="contactNumber && contactNumber.invalid && contactNumber.touched"
+                                            class="error link-danger">Please enter
+                                            url</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="">
+                                    <div class="form-group">
+                                        <label for="txtdescription">Description</label>
+                                        <textarea type="text" id="txtdescription" name="description"
+                                            class="form-control" formControlName="description"
+                                            autocomplete="off"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="row">
+
+                            <div class="col-lg-2">
+                                <br>
+                                <span id="msg" class={{messageclass}}>{{message}}</span>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" (click)="save()" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</main>

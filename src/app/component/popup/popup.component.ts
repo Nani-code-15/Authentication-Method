@@ -3,15 +3,16 @@ import { BrandService } from 'src/app/service/brand.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, Validators, FormControl, FormBuilder } from '@angular/forms';
 import { Products } from 'src/app/product/products';
+import Swal from 'sweetalert2';
 
 
 
 @Component({
-  selector: 'app-create',
-  templateUrl:   './create.component.html',
-  styleUrls: ['./create.component.css']
+  selector: 'app-popup',
+  templateUrl: './popup.component.html',
+  styleUrls: ['./popup.component.css']
 })
-export class CreateComponent implements OnInit {
+export class PopupComponent implements OnInit {
   // dataForm: Products={
   //   id: 0,
   //   name: '',
@@ -19,19 +20,30 @@ export class CreateComponent implements OnInit {
   //   description: ''
   // }
 
+
+
   messageclass = ''
   message = ''
   customerid: any;
   editdata: any;
   responsedata: any;
   register!: FormGroup;
+  
 
   constructor(public brandService: BrandService, private route: ActivatedRoute, private _fb: FormBuilder, private router: Router) {
     this.customerid = this.route.snapshot.paramMap.get('id');
     if (this.customerid != null) {
       this.updateBrandData(this.customerid);
     }
- 
+
+  }
+
+  brandData: Products[]=[];
+  getAll(){
+    this.brandService.getAll().subscribe((response:any)=>{
+      this.brandData=response.results;
+    })
+
   }
 
   ngOnInit(): void {
@@ -42,30 +54,42 @@ export class CreateComponent implements OnInit {
       description: new FormControl("", Validators.required),
     })
   }
+ 
+ close(){
+  this.clearBrandData();
+ }
 
   save(){
     if(this.register.valid){
       console.log(this.register.value);
       this.brandService.submitform(this.register.value).subscribe((response:any)=>{
         if(response!=null){
-          if(this.responsedata.message == 'added') {
-            this.message = "saved successfully."
-            this.messageclass = "sucess"
+          if(response) {
             this.clearBrandData();
-          } else if (this.responsedata.message == 'updated') {
+            Swal.fire('saved successfully.')
+      
+            // this.message = "saved successfully."
+            // this.messageclass = "sucess"
+             window.location.reload();
+            // this.router.navigate(['/contact'])
+          } else if (response) {
             this.message = "Customer saved successfully."
             this.messageclass = "sucess"
           } else {
             this.message = "Failed to Save"
             this.messageclass = "error"
           }
+         
         }
+       
       });
     }else{
       // alert("please enter valid data");
       this.message="please enter valid data" 
       this.messageclass="error"
+      
     }
+    
   }
 
   // save() {
@@ -75,6 +99,7 @@ export class CreateComponent implements OnInit {
   //     console.log('Post created successfully!');
   //     alert("Post created successfully!")
   //     this.router.navigateByUrl('/contact');
+
   //   })
   // }
 
@@ -82,7 +107,7 @@ export class CreateComponent implements OnInit {
   clearBrandData() {
     this.register = new FormGroup({
       name: new FormControl(""),
-      logoUrl: new FormControl(""),
+      contactNumber: new FormControl(""),
       description: new FormControl(""),
     })
   }
@@ -107,6 +132,7 @@ export class CreateComponent implements OnInit {
   get contactNumber() {
     return this.register.get("contactNumber");
   }
+
 
 
 }
